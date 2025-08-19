@@ -1,0 +1,245 @@
+/* .fas.fa-arrow-right-long::after {
+  content: '';
+  transform: scaleX(2);
+  display: inline-block;
+  transform-origin: left center;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+  margin-left: 2px;
+  vertical-align: middle;
+} */
+.background_color{
+  background: linear-gradient(to bottom right, #121212, #1f1f1f, #292929);
+}
+.glow-border-wrapper {
+  display: inline-block;
+  position: relative;
+  border-radius: 12px;
+  padding: 2px;
+  background: transparent;
+  transition: background 0.5s ease;
+}
+
+.glow-border-wrapper:hover {
+  background: linear-gradient(45deg, #00f0ff, #ff00ff, #00ff99, #ffcc00);
+  background-size: 400% 400%;
+  animation: gradientGlow 4s ease infinite;
+}
+
+.glow-border-btn {
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+@keyframes gradientGlow {
+  0% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 10px #00f0ff;
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 20px #ff00ff;
+  }
+  100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 10px #00f0ff;
+  }
+}
+
+
+.dark {
+  --sidebar: oklch(0.205 0 0); /* dark background */
+  --sidebar-foreground: oklch(0.985 0 0); /* light text */
+  --sidebar-border: oklch(1 0 0 / 10%);
+  /* tweak other variables if needed for accent colors */
+}
+
+.typing-indicator {
+  /* display: flex;
+  align-items: center; */
+  margin-left: 15px;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background-color: #8a92a2;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0.3;
+  }
+}
+
+ .scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+.phone-signin{
+  position: absolute;
+  top: 30%;
+  left: 40%
+}
+.phone-content{
+  text-align: center;
+}
+
+ .fas.fa-arrow-right-long::after {
+  content: '';
+  /* width: 20px;
+  height: 2px; */
+  transform: scaleX(2);
+  background: linear-gradient(to right, cyan, transparent);
+  /* margin-left: 6px; */
+  display: inline-block;
+}
+
+
+.glow-on-click {
+    transition: all 0.3s ease;
+}
+
+.glow-on-click:hover {
+    box-shadow: 0 0 15px 2px rgba(59, 130, 246, 0.5);
+    transform: translateY(-1px);
+}
+@media (min-width: 360px) {
+  .scrollbar {
+    overflow-y: auto;
+    scrollbar-width: auto;
+    scrollbar-color: #262d3d #0f1117;
+    -ms-overflow-style: none;
+    padding-left: 15px; 
+    padding-right: 15px
+}}
+@media(min-width: 1024px){
+  .scrollbar{
+    overflow-y: auto;
+    scrollbar-width: auto;
+    padding-left: 33px;
+    /* padding-right:10px; */
+}}
+
+
+.scrollbar-side {
+  overflow-y: overlay;
+  scrollbar-width: auto;
+  scrollbar-color: #262d3d #141820;
+  box-sizing: content-box; 
+}
+
+
+.scrollbar-input_box{
+    overflow-y: auto;
+    scrollbar-width: auto;
+    scrollbar-color: #262d3d #0B0E17;
+    -ms-overflow-style: none;
+}
+
+.message-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.message-container::-webkit-scrollbar-track {
+    background: #0f1117;
+    border-radius: 10px;
+}
+
+.message-container::-webkit-scrollbar-thumb {
+    background: #262d3d;
+    border-radius: 10px;
+}
+
+.button-hover {
+    transition: all 0.2s ease;
+}
+
+.button-hover:hover {
+    transform: scale(1.1);
+}
+
+.active-glow {
+    box-shadow: 0 0 15px 2px rgba(59, 130, 246, 0.5);
+    background-color: rgba(59, 130, 246, 0.2);
+    color: white !important;
+}
+
+
+
+/* its for auth only:  */
+.button-glow {
+    position: relative;
+  }
+  
+  .button-glow::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: inherit;
+    filter: blur(14px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: inherit;
+  }
+  
+  .button-glow:hover::after {
+    opacity: 0.4;
+  }
+
+/* its for auth only:  */
+.text-gradient {
+    text-shadow: 0 0 20px rgba(129, 140, 248, 0.5);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
