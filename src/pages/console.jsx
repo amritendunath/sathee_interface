@@ -625,6 +625,7 @@ const ChatUI = () => {
                   input={input}
                   startSSE={startSSE}
                   stopSSE={stopSSE}
+                  disabled={!input.trim()}
                 />
               </div>
             </div>
