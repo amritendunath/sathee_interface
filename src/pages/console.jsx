@@ -122,7 +122,9 @@ const ChatUI = () => {
     } else {
       messageToSend = input;
     }
-
+    if (!messageToSend || !messageToSend.trim()) {
+      return; // Do not proceed if message is empty or whitespace
+    }
     const userMessage = {
       name: 'User',
       message: messageToSend,
@@ -625,7 +627,6 @@ const ChatUI = () => {
                   input={input}
                   startSSE={startSSE}
                   stopSSE={stopSSE}
-                  disabled={!input.trim()}
                 />
               </div>
             </div>
