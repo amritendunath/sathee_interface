@@ -3,12 +3,12 @@
     margin: 0;
     padding: 0;
 }
-/* body {
+body {
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
     font-size: 100%;
     background: #F1F1F1;
-} */
+}
 
 *, html {
     --primaryGradient: linear-gradient(93.12deg, #581B98 0.52%, #9C1DE7 100%);

@@ -80,14 +80,14 @@
   }
 }
 
-body {
+/* body {
   margin: 0;
-  background-color: #0f1117; /* Set the background color for the entire body */
+  background-color: #0f1117;
   overflow: hidden;
-  background-color: #0f1117 !important;  /* override styles.css */
+  background-color: #0f1117 !important; 
 }
 
-
+ */
 
 
 
