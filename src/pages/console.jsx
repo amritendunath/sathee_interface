@@ -434,123 +434,122 @@ const ChatUI = () => {
           //     ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
           //   `}
           // >
-          <div
-            className={`text-center w-full max-w-lg sm:max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto justify-center mt-24 sm:mt-32 md:mt-40 lg:mt-48 px-4 transition-opacity duration-500 ease-in-out
+  <div
+    className={`flex items-center justify-center h-[calc(100vh-80px)] w-full px-4 transition-opacity duration-500 ease-in-out
       ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-          >
+  >
+    <div className="text-center max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
+      <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-4xl leading-tight mb-2">
+        {getGreetingUI()}, {userName.split(" ")[0]}
+      </h1>
+      <h2 className="text-white font-semibold text-lg sm:text-xl md:text-2xl leading-tight mb-6">
+        What can I help you with today?
+      </h2>
 
-            <div className="text-center w-full px-2 sm:px-4 ">
-              <h1 className="text-white font-semibold text-lg sm:text-xl md:text-[28px] leading-tight mb-2">
-                {getGreetingUI()}, {userName.split(" ")[0]}
-              </h1>
-              <h2 className="text-white font-semibold text-lg sm:text-xl md:text-[28px] leading-tight mb-4 sm:mb-6">
-                What can I help you with today?
-              </h2>
-            </div>
-            {/* <div className="flex-1 flex items-center justify-center p-8">
+              {/* <div className="flex-1 flex items-center justify-center p-8">
                 <div className="max-w-3xl text-center">
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 max-w-2xl mx-auto"> */}
-            <div className="flex-1 flex items-center justify-center p-2 sm:p-4 md:p-8">
-              <div className="max-w-sm sm:max-w-2xl md:max-w-3xl text-center">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 max-w-sm sm:max-w-2xl mx-auto">
+              <div className="flex-1 flex items-center justify-center p-2 sm:p-4 md:p-8">
+                <div className="max-w-sm sm:max-w-2xl md:max-w-3xl text-center">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 max-w-sm sm:max-w-2xl mx-auto">
 
-                  <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
-                    onClick={(e) => {
-                      startSSE(e);
-                    }}
-                  >
-                    <div className="text-left">
-                      <h3 className="font-medium mb-1 flex">
-                        <Lightbulb className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-yellow-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
-                        Brainstroms
-                      </h3>
-                      <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">
-                        Brainstorm creative solutions like you want
-                      </p>
+                    <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
+                      onClick={(e) => {
+                        startSSE(e);
+                      }}
+                    >
+                      <div className="text-left">
+                        <h3 className="font-medium mb-1 flex">
+                          <Lightbulb className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-yellow-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
+                          Brainstroms
+                        </h3>
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">
+                          Brainstorm creative solutions like you want
+                        </p>
 
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
-                    onClick={(e) =>
-                      startSSE(e)
-                    }
-                  >
-                    <div className="text-left">
-                      <h3 className="font-medium mb-1 flex">
-                        <HeartHandshake className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-blue-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
-                        Heart help
-                      </h3>
-                      <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">
-                        Diagnose your heart and body
-                      </p>
+                    <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
+                      onClick={(e) =>
+                        startSSE(e)
+                      }
+                    >
+                      <div className="text-left">
+                        <h3 className="font-medium mb-1 flex">
+                          <HeartHandshake className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-blue-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
+                          Heart help
+                        </h3>
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">
+                          Diagnose your heart and body
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
-                    onClick={(e) =>
-                      startSSE(e)
-                    }
-                  >
-                    <div className="text-left">
-                      <h3 className="font-medium mb-1 flex"
+                    <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
+                      onClick={(e) =>
+                        startSSE(e)
+                      }
+                    >
+                      <div className="text-left">
+                        <h3 className="font-medium mb-1 flex"
 
-                      >
-                        <GraduationCap className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-green-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
-                        Learn more
-                      </h3>
-                      <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Understand complex topics</p>
+                        >
+                          <GraduationCap className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-green-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
+                          Learn more
+                        </h3>
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Understand complex topics</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
-                    onClick={(e) =>
-                      startSSE(e)
-                    }
-                  >
-                    <div className="text-left">
-                      <h3 className="font-medium mb-1 flex"
+                    <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
+                      onClick={(e) =>
+                        startSSE(e)
+                      }
+                    >
+                      <div className="text-left">
+                        <h3 className="font-medium mb-1 flex"
 
-                      >
-                        <NotepadText className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-violet-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
-                        Take a quiz
-                      </h3>
-                      <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Quiz on the topics you like</p>
+                        >
+                          <NotepadText className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-violet-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
+                          Take a quiz
+                        </h3>
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Quiz on the topics you like</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
-                    onClick={(e) =>
-                      startSSE(e)
-                    }
-                  >
-                    <div className="text-left">
-                      <h3 className="font-medium mb-1 flex"
+                    <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
+                      onClick={(e) =>
+                        startSSE(e)
+                      }
+                    >
+                      <div className="text-left">
+                        <h3 className="font-medium mb-1 flex"
 
-                      >
-                        <PencilLine className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-pink-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
-                        Get advice
-                      </h3>
-                      <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Get advice on topics you like</p>
+                        >
+                          <PencilLine className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-pink-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
+                          Get advice
+                        </h3>
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Get advice on topics you like</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
-                    onClick={(e) =>
-                      startSSE(e)
-                    }
-                  >
-                    <div className="text-left">
-                      <h3 className="font-medium mb-1 flex"
-                        onClick={(e) =>
-                          startSSE(e)
-                        }
-                      >
-                        <HiOutlineLightBulb className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-cyan-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
-                        Make a plan
-                      </h3>
-                      <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Plans that make a day more</p>
+                    <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
+                      onClick={(e) =>
+                        startSSE(e)
+                      }
+                    >
+                      <div className="text-left">
+                        <h3 className="font-medium mb-1 flex"
+                          onClick={(e) =>
+                            startSSE(e)
+                          }
+                        >
+                          <HiOutlineLightBulb className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-cyan-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
+                          Make a plan
+                        </h3>
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Plans that make a day more</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         )}
         {/* Messages Area */}
