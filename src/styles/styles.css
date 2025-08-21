@@ -20,27 +20,8 @@ body {
 }
 .message-wrapper {
     /* Ensure the wrapper takes up the available height */
-    min-height: 100vh;
-    padding-bottom: 20px; /* Adjust this value as needed to ensure the first message is visible */
-}
-
-.container {
-  min-height: 100vh; /* At least fill the screen */
-  display: flex;
-  flex-direction: column;
-}
-
-.content {
-  flex-grow: 1; /* Allow content to take up available space */
-  overflow-y: auto; /* Enable scrolling if content is too long */
-  padding: 20px;
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-  .content {
-    padding: 10px; /* Reduce padding for smaller screens */
-  }
+    max-height: 80vh;
+    padding-bottom: 10px; /* Adjust this value as needed to ensure the first message is visible */
 }
 /* CHATBOX
 =============== */
