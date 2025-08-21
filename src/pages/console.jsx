@@ -389,51 +389,52 @@ const ChatUI = () => {
       {/* Main content */}
       <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full">
         {/* Navbar */}
-        {/* <div className=" z-40">
-        </div> */}
-        <div className="fixed top-0 left-0 right-0 flex items-center z-10">
-          {isMobile && (
-            <>
-              {isOpen ? (
-                null
-              ) : (
+        <div className="fixed top-0 left-0 right-0 z-40">
+          <div className=" flex items-center z-10">
+            {isMobile && (
+              <>
+                {isOpen ? (
+                  null
+                ) : (
 
-                <button
-                  className="text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none button-hover hover:text-cyan-400"
-                  onClick={() => setIsOpen(prev => !prev)}
-                >
-                  <PanelLeftOpen size={22} />
-                </button>
-              )}
-            </>
-          )}
-          {!isMobile && (
-            <>
-              {isOpen ? (
-                <button
-                  className="translate-x-64 text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none "
-                  onClick={() => setIsOpen(prev => !prev)}
-                >
-                  <PanelRightOpen size={22} />
-                </button>
-              ) : (
+                  <button
+                    className="text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none button-hover hover:text-cyan-400"
+                    onClick={() => setIsOpen(prev => !prev)}
+                  >
+                    <PanelLeftOpen size={22} />
+                  </button>
+                )}
+              </>
+            )}
+            {!isMobile && (
+              <>
+                {isOpen ? (
+                  <button
+                    className="translate-x-64 text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none "
+                    onClick={() => setIsOpen(prev => !prev)}
+                  >
+                    <PanelRightOpen size={22} />
+                  </button>
+                ) : (
 
-                <button
-                  className="text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none button-hover hover:text-cyan-400"
-                  onClick={() => setIsOpen(prev => !prev)}
-                >
-                  <PanelLeftOpen size={22} />
-                </button>
-              )}
-            </>
-          )}
-          <button
-            onClick={handleLogout}
-            // className="ml-auto p-3 rounded-full transition-colors button-hover hover:text-red-200">
-            className="absolute top-0 right-0 m-1 mr-2 p-3 rounded-full transition-colors button-hover hover:text-red-200">
-            <LogOut size={20} />
-          </button>
+                  <button
+                    className="text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none button-hover hover:text-cyan-400"
+                    onClick={() => setIsOpen(prev => !prev)}
+                  >
+                    <PanelLeftOpen size={22} />
+                  </button>
+                )}
+              </>
+            )}
+            <button
+              onClick={handleLogout}
+              // className="ml-auto p-3 rounded-full transition-colors button-hover hover:text-red-200">
+              className="absolute top-0 right-0 m-1 mr-2 p-3 rounded-full transition-colors button-hover hover:text-red-200">
+              <LogOut size={20} />
+            </button>
+          </div>
         </div>
+
 
         {/* Welcome screen overlay */}
         {welcomeMounted && (messages.length === 0 || input === 300) && input.length <= 300 && (
