@@ -441,6 +441,7 @@ const ChatUI = () => {
           //     ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
           //   `}
           // >
+          
           <div
             className={`fixed inset-0 flex items-center justify-center h-[calc(100vh-80px)] w-full px-4 transition-opacity duration-500 ease-in-out
               ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
