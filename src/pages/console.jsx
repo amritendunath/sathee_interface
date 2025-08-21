@@ -453,7 +453,6 @@ const ChatUI = () => {
               <h2 className="text-white font-semibold text-lg sm:text-xl md:text-2xl leading-tight mb-6">
                 What can I help you with today?
               </h2>
-
               {/* <div className="flex-1 flex items-center justify-center p-8">
                 <div className="max-w-3xl text-center">
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 max-w-2xl mx-auto"> */}
