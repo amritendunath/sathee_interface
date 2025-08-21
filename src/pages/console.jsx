@@ -391,8 +391,8 @@ const ChatUI = () => {
 
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full">
-        <div className="absolute flex items-center p-1 ">
+      <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full min-h-screen">
+        <div className="absolute flex items-center p-1 z-10">
           {isMobile && (
             <button
               className={
@@ -592,7 +592,7 @@ const ChatUI = () => {
         </div>
 
         {/* Input Area */}
-        <div className="sticky bottom-0 left-0 right-0 from-[#0f1117] via-[#0f1117]/90 to-transparent bg-gradient-to-t ">
+        <div className="sticky bottom-0 left-0 right-0 from-[#0f1117] via-[#0f1117]/90 to-transparent to-transparent">
           <div className="p-6 max-w-2xl mx-auto">
             <div className="bg-[#0B0E17] rounded-[32px] p-[18px] mb-[10px] shadow-[0_3px_20px_0_rgba(40,50,70,0.95)] border border-[#181B24]">
               <div className="flex flex-col">
