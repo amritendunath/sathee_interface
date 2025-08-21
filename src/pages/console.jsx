@@ -392,7 +392,7 @@ const ChatUI = () => {
             {isMobile && (
               <button
                 className={
-                  `mt-4 text-gray-200 absolute top-0 left-0 m-2 focus:outline-none transition-transform transform button-hover hover:text-cyan-400
+                  `text-gray-200 absolute top-0 left-0 m-1 ml-2 p-3 focus:outline-none transition-transform transform button-hover hover:text-cyan-400
                 `
                 }
                 onClick={() => setIsOpen(true)}
