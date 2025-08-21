@@ -387,7 +387,7 @@ const ChatUI = () => {
 
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full overflow-hidden">
+      <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full">
         {/* Navbar */}
         {/* <div className="fixed top-0 left-0 right-0 z-40">
 
@@ -568,25 +568,29 @@ const ChatUI = () => {
           <div className="mt-10 sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px] pb-32">
             {/* <div className="flex-1 overflow-auto scrollbar">
           <div className=" mt-10 sm:mt-12 md:mt-15 mb-[120px] sm:mb-[140px] md:mb-[150px]  p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-sm sm:text-sm md:text-[14px]"> */}
-            {messages.map((msg, index) => (
-              (typeof msg.message === 'string') ? (
-                <MessageBubble
-                  message={{
-                    role: msg.name === 'User' ? 'user' : 'assistant',
-                    content: msg.message
-                  }}
-                />
-              ) : null))}
-            {loading && (
-              <div className="flex justify-start">
-                <div className="typing-indicator">
-                  <span></span>
-                  <span></span>
-                  <span></span>
+            <div className="message-wrapper">
+
+
+              {messages.map((msg, index) => (
+                (typeof msg.message === 'string') ? (
+                  <MessageBubble
+                    message={{
+                      role: msg.name === 'User' ? 'user' : 'assistant',
+                      content: msg.message
+                    }}
+                  />
+                ) : null))}
+              {loading && (
+                <div className="flex justify-start">
+                  <div className="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
                 </div>
-              </div>
-            )}
-            <div ref={messagesEndRef} />
+              )}
+              <div ref={messagesEndRef} />
+            </div>
           </div>
         </div>
 
