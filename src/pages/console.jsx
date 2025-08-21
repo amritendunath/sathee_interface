@@ -583,8 +583,8 @@ const ChatUI = () => {
         {/* Messages Area */}
         {/* <div className="flex-1 overflow-y-auto scrollbar">
           <div className="mt-10 mb-[80px] sm:mb-[150px] sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px]"> */}
-        <div className="flex-1 overflow-y-auto scrollbar">
-          <div className="mt-6 sm:mt-8 md:mt-10 mb-[60px] sm:mb-[140px] md:mb-[150px] p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-xs sm:text-sm md:text-[14px]">
+        <div className="flex-1 overflow-y-auto ">
+          <div className="scrollbar mt-6 sm:mt-8 md:mt-10 mb-[120px] sm:mb-[140px] md:mb-[150px] p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-xs sm:text-sm md:text-[14px]">
             {messages.map((msg, index) => (
               (typeof msg.message === 'string') ? (
                 <MessageBubble
