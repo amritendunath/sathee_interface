@@ -446,7 +446,7 @@ const ChatUI = () => {
           // >
 
           <div
-            className={`fixed flex items-center justify-center h-[calc(100vh-100px)] w-full px-4 transition-opacity duration-500 ease-in-out
+            className={`fixed flex items-center justify-center  w-full px-4 transition-opacity duration-500 ease-in-out
               ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
           >
             <div className="text-center max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
