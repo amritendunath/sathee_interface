@@ -440,8 +440,8 @@ const ChatUI = () => {
           // >
           <div
             className={`text-center w-full max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto justify-center mt-16 sm:mt-24 md:mt-[40px] lg:mt-[80px] px-2 transition-opacity duration-500 ease-in-out
-    ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
-  `}
+                          ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+            `}
           >
 
             <div className="text-center w-full px-2 sm:px-4 ">
@@ -576,9 +576,10 @@ const ChatUI = () => {
         )}
         {/* Messages Area */}
         {/* <div className="flex-1 overflow-y-auto scrollbar">
+        sm:mt-8 md:mt-10 mb-[120px] sm:mb-[140px] md:mb-[150px]
           <div className="mt-10 mb-[80px] sm:mb-[150px] sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px]"> */}
-        <div className="flex-1 ">
-          <div className="mt-6 sm:mt-8 md:mt-10 mb-[120px] sm:mb-[140px] md:mb-[150px] p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-xs sm:text-sm md:text-[14px]">
+        <div className="flex-1 overflow-auto">
+          <div className=" mt-6  p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-xs sm:text-sm md:text-[14px]">
             {messages.map((msg, index) => (
               (typeof msg.message === 'string') ? (
                 <MessageBubble
