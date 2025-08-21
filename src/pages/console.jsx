@@ -348,7 +348,7 @@ const ChatUI = () => {
   return (
 
     // <div className="h-screen w-full flex bg-[#0f1117] border-4 border-red-500" >
-    <div className="h-screen w-screen flex bg-[#0f1117]" >
+    <div className="h-screen w-screen flex bg-[#0f1117] overflow-hidden" >
       <div className="pointer-events-none fixed inset-0" aria-hidden>
         {/* Top center animated glow */}
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gradient-to-br from-sky-400/10 via-blue-500/10 to-indigo-400/5 blur-[140px] animate-glow" />
@@ -443,7 +443,7 @@ const ChatUI = () => {
           // >
 
           <div
-            className={` flex items-center justify-center h-[calc(100vh-80px)] w-full px-4 transition-opacity duration-500 ease-in-out
+            className={`fixed flex items-center justify-center h-[calc(100vh-80px)] w-full px-4 transition-opacity duration-500 ease-in-out
               ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
           >
             <div className="text-center max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
