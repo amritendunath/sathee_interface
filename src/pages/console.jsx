@@ -568,7 +568,7 @@ const ChatUI = () => {
         )}
         {/* Messages Area */}
         <div className="flex-1 overflow-y-auto scrollbar">
-          <div className="mt-10 mb-[80px] sm:mb-[150px] sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px]">
+          <div className="mt-10  sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px]">
             {messages.map((msg, index) => (
               (typeof msg.message === 'string') ? (
                 <MessageBubble
