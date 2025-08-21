@@ -20,8 +20,8 @@ body {
 }
 .message-wrapper {
     /* Ensure the wrapper takes up the available height */
-    max-height: 80%;
-    /* padding-bottom: 10px; */
+    /* max-height: 80%; */
+    padding-bottom: 100px;
 }
 /* CHATBOX
 =============== */
