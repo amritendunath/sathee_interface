@@ -347,7 +347,7 @@ const ChatUI = () => {
   }
   return (
 
-    <div className="h-screen w-full flex bg-[#0f1117]" >
+    <div className="h-screen w-full flex bg-[#0f1117] border-4 border-red-500" >
       <div className="pointer-events-none fixed inset-0" aria-hidden>
         {/* Top center animated glow */}
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gradient-to-br from-sky-400/10 via-blue-500/10 to-indigo-400/5 blur-[140px] animate-glow" />
@@ -386,7 +386,7 @@ const ChatUI = () => {
 
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full">
+      <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full border-4 border-blue-500">
         {/* Navbar */}
         <div className="fixed top-0 left-0 right-0 z-40">
           <div className=" flex items-center z-10">
@@ -560,7 +560,7 @@ const ChatUI = () => {
         )}
         {/* Messages Area */}
         {/* sm:mt-8 md:mt-10 mb-[120px] sm:mb-[140px] md:mb-[150px] */}
-        <div className="flex-1 overflow-auto">
+        <div className="flex-1 overflow-auto border-4 border-green-500">
           <div className="scrollbar mt-10 mb-[80px] sm:mb-[150px] sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px] pb-32">
         {/* <div className="flex-1 overflow-auto scrollbar">
           <div className=" mt-10 sm:mt-12 md:mt-15 mb-[120px] sm:mb-[140px] md:mb-[150px]  p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-sm sm:text-sm md:text-[14px]"> */}
