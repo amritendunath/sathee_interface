@@ -386,52 +386,47 @@ const ChatUI = () => {
 
       {/* Main content */}
       <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full">
-        <div className="absolute flex items-center p-1 z-10">
-          {isMobile && (
-            <button
-              className={
-                `mt-4 text-gray-200 absolute top-0 left-0 m-2 focus:outline-none transition-transform transform button-hover hover:text-cyan-400
+        <div className="fixed top-0 left-0 right-0 z-40 bg-[#0f1117]/95 backdrop-blur-sm border-b border-[#181B24]/50">
+          <div className="absolute flex items-center p-1 z-10">
+            {isMobile && (
+              <button
+                className={
+                  `mt-4 text-gray-200 absolute top-0 left-0 m-2 focus:outline-none transition-transform transform button-hover hover:text-cyan-400
                 `
-              }
-              onClick={() => setIsOpen(true)}
-            >
-              <PanelLeftOpen size={22} />
-            </button>
-          )}
-          {!isMobile && (
-            <>
-              {isOpen ? (
-                <button
-                  className="translate-x-64 text-gray-200 top-0 left-0 m-2 z-40 focus:outline-none "
-                  onClick={() => setIsOpen(prev => !prev)}
-                >
-                  <PanelRightOpen size={22} />
-                </button>
-              ) : (
+                }
+                onClick={() => setIsOpen(true)}
+              >
+                <PanelLeftOpen size={22} />
+              </button>
+            )}
+            {!isMobile && (
+              <>
+                {isOpen ? (
+                  <button
+                    className="translate-x-64 text-gray-200 top-0 left-0 m-2 z-40 focus:outline-none "
+                    onClick={() => setIsOpen(prev => !prev)}
+                  >
+                    <PanelRightOpen size={22} />
+                  </button>
+                ) : (
 
-                <button
-                  className="text-gray-200 top-0 left-0 m-2 z-40 focus:outline-none button-hover hover:text-cyan-400"
-                  onClick={() => setIsOpen(prev => !prev)}
-                >
-                  <PanelLeftOpen />
-                </button>
-              )}
-            </>
-          )}
-          {/* <img
-            alt="Copilot logo with blue, purple, and pink gradient shapes"
-            className="w-10 h-10 flex justify-center items-center flex-grow"
-            height="20"
-            src={geneticSvg}
-            width="20"
-          /> */}
+                  <button
+                    className="text-gray-200 top-0 left-0 m-2 z-40 focus:outline-none button-hover hover:text-cyan-400"
+                    onClick={() => setIsOpen(prev => !prev)}
+                  >
+                    <PanelLeftOpen />
+                  </button>
+                )}
+              </>
+            )}
+          </div>
+          <button
+            onClick={handleLogout}
+            // className="ml-auto p-3 rounded-full transition-colors button-hover hover:text-red-200">
+            className="absolute top-0 right-0 m-1 mr-2 p-3 rounded-full transition-colors button-hover hover:text-red-200">
+            <LogOut size={20} />
+          </button>
         </div>
-        <button
-          onClick={handleLogout}
-          // className="ml-auto p-3 rounded-full transition-colors button-hover hover:text-red-200">
-          className="absolute top-0 right-0 m-1 mr-2 p-3 rounded-full transition-colors button-hover hover:text-red-200">
-          <LogOut size={20} />
-        </button>
         {welcomeMounted && (messages.length === 0 || input === 300) && input.length <= 300 && (
           // <div
           //   className={`text-center w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto justify-center mt-24 sm:mt-40 md:mt-[40px] lg:mt-[80px] transition-opacity duration-500 ease-in-out
