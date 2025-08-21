@@ -391,7 +391,7 @@ const ChatUI = () => {
 
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full min-h-screen">
+      <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full">
         <div className="absolute flex items-center p-1 z-10">
           {isMobile && (
             <button
