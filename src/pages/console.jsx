@@ -346,7 +346,7 @@ const ChatUI = () => {
   }
   return (
 
-    <div className="h-screen w-full flex bg-[#0f1117] overflow-auto" >
+    <div className="h-screen w-full flex bg-[#0f1117] overflow-hidden" >
       <div className="pointer-events-none fixed inset-0" aria-hidden>
         {/* Top center animated glow */}
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gradient-to-br from-sky-400/10 via-blue-500/10 to-indigo-400/5 blur-[140px] animate-glow" />
@@ -396,7 +396,7 @@ const ChatUI = () => {
           {isMobile && (
             <button
               className={
-                `text-gray-200 absolute top-0 left-0 m-1 ml-2 p-3 focus:outline-none transition-transform transform button-hover hover:text-cyan-400
+                `mt-4 text-gray-200 absolute top-0 left-0 m-2 focus:outline-none transition-transform transform button-hover hover:text-cyan-400
                 `
               }
               onClick={() => setIsOpen(true)}
@@ -446,10 +446,16 @@ const ChatUI = () => {
           >
 
             <div className="text-center w-full px-2 sm:px-4 ">
-              <h1 className="text-white font-semibold text-[28px] leading-tight mb-2">
+              {/* <h1 className="text-white font-semibold text-[28px] leading-tight mb-2">
                 {getGreetingUI()}, {userName.split(" ")[0]}
               </h1>
               <h2 className="text-white font-semibold text-[28px] leading-tight mb-6">
+                What can I help you with today?
+              </h2> */}
+              <h1 className="text-white font-semibold text-lg sm:text-xl md:text-[28px] leading-tight mb-2">
+                {getGreetingUI()}, {userName.split(" ")[0]}
+              </h1>
+              <h2 className="text-white font-semibold text-lg sm:text-xl md:text-[28px] leading-tight mb-4 sm:mb-6">
                 What can I help you with today?
               </h2>
               {/* <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-xs sm:max-w-xl mx-auto">
@@ -463,10 +469,13 @@ const ChatUI = () => {
                   </button>
                 ))}
               </div> */}
-              <div className="flex-1 flex items-center justify-center p-8">
+              {/* <div className="flex-1 flex items-center justify-center p-8">
                 <div className="max-w-3xl text-center">
-                  {/* Quick Start Cards */}
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 max-w-2xl mx-auto"> */}
+              <div className="flex-1 flex items-center justify-center p-2 sm:p-4 md:p-8">
+                <div className="max-w-sm sm:max-w-2xl md:max-w-3xl text-center">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 max-w-sm sm:max-w-2xl mx-auto">
+
                     <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
                       onClick={(e) => {
                         startSSE(e);
@@ -474,10 +483,10 @@ const ChatUI = () => {
                     >
                       <div className="text-left">
                         <h3 className="font-medium mb-1 flex">
-                          <Lightbulb className="h-5 w-5 text-yellow-500 mb-2 mr-2" />
+                          <Lightbulb className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-yellow-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
                           Brainstroms
                         </h3>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">
                           Brainstorm creative solutions like you want
                         </p>
 
@@ -489,13 +498,13 @@ const ChatUI = () => {
                       }
                     >
                       <div className="text-left">
-                        <h3 className="font-medium mb-1 flex"
-
-                        >
-                          <HeartHandshake className="h-5 w-5 text-blue-500 mb-2 mr-2" />
+                        <h3 className="font-medium mb-1 flex">
+                          <HeartHandshake className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-blue-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
                           Heart help
                         </h3>
-                        <p className="text-sm text-muted-foreground">Diagnose your heart and body</p>
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">
+                          Diagnose your heart and body
+                        </p>
                       </div>
                     </div>
                     <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
@@ -507,10 +516,10 @@ const ChatUI = () => {
                         <h3 className="font-medium mb-1 flex"
 
                         >
-                          <GraduationCap className="h-5 w-5 text-green-500 mb-2 mr-2" />
+                          <GraduationCap className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-green-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
                           Learn more
                         </h3>
-                        <p className="text-sm text-muted-foreground">Understand complex topics</p>
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Understand complex topics</p>
                       </div>
                     </div>
                     <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
@@ -522,10 +531,10 @@ const ChatUI = () => {
                         <h3 className="font-medium mb-1 flex"
 
                         >
-                          <NotepadText className="h-5 w-5 text-violet-500 mb-2 mr-2" />
+                          <NotepadText className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-violet-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
                           Take a quiz
                         </h3>
-                        <p className="text-sm text-muted-foreground">Quiz on the topics you like</p>
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Quiz on the topics you like</p>
                       </div>
                     </div>
                     <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
@@ -537,10 +546,10 @@ const ChatUI = () => {
                         <h3 className="font-medium mb-1 flex"
 
                         >
-                          <PencilLine className="h-5 w-5 text-pink-500 mb-2 mr-2" />
+                          <PencilLine className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-pink-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
                           Get advice
                         </h3>
-                        <p className="text-sm text-muted-foreground">Get advice on topics you like</p>
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Get advice on topics you like</p>
                       </div>
                     </div>
                     <div className="p-4 border-2 border-[#363C4D] border-opacity-60 rounded-[32px] hover:bg-[#1f212c] cursor-pointer transition-colors"
@@ -554,10 +563,10 @@ const ChatUI = () => {
                             startSSE(e)
                           }
                         >
-                          <HiOutlineLightBulb className="h-5 w-5 text-cyan-500 mb-2 mr-2" />
+                          <HiOutlineLightBulb className="h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-cyan-500 mb-1 sm:mb-2 mr-1 sm:mr-2" />
                           Make a plan
                         </h3>
-                        <p className="text-sm text-muted-foreground">Plans that make a day more</p>
+                        <p className="text-xs sm:text-sm md:text-sm text-muted-foreground">Plans that make a day more</p>
                       </div>
                     </div>
                   </div>
@@ -567,8 +576,10 @@ const ChatUI = () => {
           </div>
         )}
         {/* Messages Area */}
+        {/* <div className="flex-1 overflow-y-auto scrollbar">
+          <div className="mt-10 mb-[80px] sm:mb-[150px] sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px]"> */}
         <div className="flex-1 overflow-y-auto scrollbar">
-          <div className="mt-10 mb-[80px] sm:mb-[150px] sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px]">
+          <div className="mt-6 sm:mt-8 md:mt-10 mb-[120px] sm:mb-[140px] md:mb-[150px] p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-xs sm:text-sm md:text-[14px]">
             {messages.map((msg, index) => (
               (typeof msg.message === 'string') ? (
                 <MessageBubble
@@ -592,9 +603,12 @@ const ChatUI = () => {
         </div>
 
         {/* Input Area */}
-        <div className="sticky bottom-0 left-0 right-0 from-[#0f1117] via-[#0f1117]/90 to-transparent bg-gradient-to-t ">
+        {/* <div className="sticky bottom-0 left-0 right-0 from-[#0f1117] via-[#0f1117]/90 to-transparent bg-gradient-to-t ">
           <div className="p-6 max-w-2xl mx-auto">
-            <div className="bg-[#0B0E17] rounded-[32px] p-[18px] mb-[10px] shadow-[0_3px_20px_0_rgba(40,50,70,0.95)] border border-[#181B24]">
+            <div className="bg-[#0B0E17] rounded-[32px] p-[18px] mb-[10px] shadow-[0_3px_20px_0_rgba(40,50,70,0.95)] border border-[#181B24]"> */}
+        <div className="sticky bottom-0 left-0 right-0 bg-gradient-to-t from-[#0f1117] via-[#0f1117]/90 to-transparent">
+          <div className="p-3 sm:p-4 md:p-6 max-w-full sm:max-w-xl md:max-w-2xl mx-auto">
+            <div className="bg-[#0B0E17] rounded-[32px] sm:rounded-[32px] md:rounded-[32px] p-3 sm:p-4 md:p-[18px] mb-2 sm:mb-[10px] shadow-[0_3px_20px_0_rgba(40,50,70,0.95)] border border-[#181B24]">
               <div className="flex flex-col">
                 <textarea
                   ref={textareaRef}
