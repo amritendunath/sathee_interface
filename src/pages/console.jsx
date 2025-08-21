@@ -592,6 +592,7 @@ const ChatUI = () => {
             </div>
           </div>
         </div>
+        
 
         {/* Input Area */}
         <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-[#0f1117] via-[#0f1117]/90 to-transparent">
