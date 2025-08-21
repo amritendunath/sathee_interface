@@ -426,13 +426,13 @@ const ChatUI = () => {
                 )}
               </>
             )}
+          </div>
             <button
               onClick={handleLogout}
               // className="ml-auto p-3 rounded-full transition-colors button-hover hover:text-red-200">
               className="absolute top-0 right-0 m-1 mr-2 p-3 rounded-full transition-colors button-hover hover:text-red-200">
               <LogOut size={20} />
             </button>
-          </div>
         </div>
 
 
