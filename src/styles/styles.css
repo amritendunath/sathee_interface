@@ -21,7 +21,7 @@ body {
 .message-wrapper {
     /* Ensure the wrapper takes up the available height */
     min-height: 100vh;
-    padding-bottom: 200px; /* Adjust this value as needed to ensure the first message is visible */
+    padding-bottom: 20px; /* Adjust this value as needed to ensure the first message is visible */
 }
 /* CHATBOX
 =============== */
