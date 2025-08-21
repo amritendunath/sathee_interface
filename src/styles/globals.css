@@ -83,6 +83,8 @@
 body {
   margin: 0;
   background-color: #0f1117; /* Set the background color for the entire body */
+  overflow: hidden;
+  background-color: #0f1117 !important;  /* override styles.css */
 }
 
 
