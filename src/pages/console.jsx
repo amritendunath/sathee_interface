@@ -396,7 +396,7 @@ const ChatUI = () => {
           {isMobile && (
             <button
               className={
-                `mt-4 text-gray-200 absolute top-0 left-0 m-2 focus:outline-none transition-transform transform button-hover hover:text-cyan-400
+                `text-gray-200 absolute top-0 left-0 m-1 ml-2 p-3 focus:outline-none transition-transform transform button-hover hover:text-cyan-400
                 `
               }
               onClick={() => setIsOpen(true)}
@@ -568,7 +568,7 @@ const ChatUI = () => {
         )}
         {/* Messages Area */}
         <div className="flex-1 overflow-y-auto scrollbar">
-          <div className="mt-10  sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px]">
+          <div className="mt-10 mb-[80px] sm:mb-[150px] sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px]">
             {messages.map((msg, index) => (
               (typeof msg.message === 'string') ? (
                 <MessageBubble
