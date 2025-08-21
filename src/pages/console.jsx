@@ -556,7 +556,7 @@ const ChatUI = () => {
         sm:mt-8 md:mt-10 mb-[120px] sm:mb-[140px] md:mb-[150px]
           <div className="mt-10 mb-[80px] sm:mb-[150px] sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px]"> */}
         <div className="flex-1 overflow-auto">
-          <div className=" mt-6 pb-24 p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-xs sm:text-sm md:text-[14px]">
+          <div className=" mt-6 pb-32 p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-xs sm:text-sm md:text-[14px]">
             {messages.map((msg, index) => (
               (typeof msg.message === 'string') ? (
                 <MessageBubble
