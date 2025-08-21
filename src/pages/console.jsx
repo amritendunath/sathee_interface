@@ -392,7 +392,7 @@ const ChatUI = () => {
         {/* <div className="fixed top-0 left-0 right-0 z-40">
 
         </div> */}
-        <div className=" flex items-center top-0 left-0 right-0 z-10">
+        <div className="absolute flex items-center top-0 left-0 right-0 z-10">
           {isMobile && (
             <>
               {isOpen ? (
