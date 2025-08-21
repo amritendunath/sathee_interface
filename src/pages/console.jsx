@@ -434,17 +434,17 @@ const ChatUI = () => {
           //     ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
           //   `}
           // >
-  <div
-    className={`sticky flex items-center justify-center h-[calc(100vh-80px)] w-full px-4 transition-opacity duration-500 ease-in-out
+          <div
+            className={`sticky flex items-center justify-center h-[calc(100vh-80px)] w-full px-4 transition-opacity duration-500 ease-in-out
       ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-  >
-    <div className="text-center max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
-      <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-4xl leading-tight mb-2">
-        {getGreetingUI()}, {userName.split(" ")[0]}
-      </h1>
-      <h2 className="text-white font-semibold text-lg sm:text-xl md:text-2xl leading-tight mb-6">
-        What can I help you with today?
-      </h2>
+          >
+            <div className="text-center max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
+              <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-4xl leading-tight mb-2">
+                {getGreetingUI()}, {userName.split(" ")[0]}
+              </h1>
+              <h2 className="text-white font-semibold text-lg sm:text-xl md:text-2xl leading-tight mb-6">
+                What can I help you with today?
+              </h2>
               {/* <div className="flex-1 flex items-center justify-center p-8">
                 <div className="max-w-3xl text-center">
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 max-w-2xl mx-auto"> */}
@@ -556,7 +556,7 @@ const ChatUI = () => {
         sm:mt-8 md:mt-10 mb-[120px] sm:mb-[140px] md:mb-[150px]
           <div className="mt-10 mb-[80px] sm:mb-[150px] sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px]"> */}
         <div className="flex-1 overflow-auto scrollbar">
-          <div className=" mt-10 sm:mt-12 md:mt-15 mb-[120px] sm:mb-[140px] md:mb-[150px]  p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-xs sm:text-sm md:text-[14px]">
+          <div className=" mt-10 sm:mt-12 md:mt-15 mb-[120px] sm:mb-[140px] md:mb-[150px]  p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-sm sm:text-sm md:text-[14px]">
             {messages.map((msg, index) => (
               (typeof msg.message === 'string') ? (
                 <MessageBubble
