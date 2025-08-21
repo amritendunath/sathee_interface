@@ -387,24 +387,28 @@ const ChatUI = () => {
 
       {/* Main content */}
       <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full">
-        <div className="fixed top-0 left-0 right-0 z-40 bg-[#0f1117]/95 backdrop-blur-sm border-b border-[#181B24]/50">
-          <div className=" flex items-center p-1 z-10">
+        <div className="fixed top-0 left-0 right-0 z-40">
+          <div className=" flex items-center z-10">
             {isMobile && (
-              <button
-                className={
-                  `text-gray-200 absolute top-0 left-0 m-1 ml-2 p-3 focus:outline-none transition-transform transform button-hover hover:text-cyan-400
-                `
-                }
-                onClick={() => setIsOpen(true)}
-              >
-                <PanelLeftOpen size={22} />
-              </button>
+              <>
+                {isOpen ? (
+                  null
+                ) : (
+
+                  <button
+                    className="text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none button-hover hover:text-cyan-400"
+                    onClick={() => setIsOpen(prev => !prev)}
+                  >
+                    <PanelLeftOpen size={22} />
+                  </button>
+                )}
+              </>
             )}
             {!isMobile && (
               <>
                 {isOpen ? (
                   <button
-                    className="translate-x-64 text-gray-200 top-0 left-0 m-2 z-40 focus:outline-none "
+                    className="translate-x-64 text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none "
                     onClick={() => setIsOpen(prev => !prev)}
                   >
                     <PanelRightOpen size={22} />
@@ -412,10 +416,10 @@ const ChatUI = () => {
                 ) : (
 
                   <button
-                    className="text-gray-200 top-0 left-0 m-2 z-40 focus:outline-none button-hover hover:text-cyan-400"
+                    className="text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none button-hover hover:text-cyan-400"
                     onClick={() => setIsOpen(prev => !prev)}
                   >
-                    <PanelLeftOpen />
+                    <PanelLeftOpen size={22}/>
                   </button>
                 )}
               </>
