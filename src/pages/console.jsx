@@ -573,12 +573,17 @@ const ChatUI = () => {
 
               {messages.map((msg, index) => (
                 (typeof msg.message === 'string') ? (
-                  <MessageBubble
-                    message={{
-                      role: msg.name === 'User' ? 'user' : 'assistant',
-                      content: msg.message
-                    }}
-                  />
+                  // <MessageBubble
+                  //   message={{
+                  //     role: msg.name === 'User' ? 'user' : 'assistant',
+                  //     content: msg.message
+                  //   }}
+                  // />
+                  <div key={index} className={`flex ${msg.name === 'User' ? 'justify-end' : 'justify-start'}`}>
+                    <div className={`mt-2 mb-2  ${msg.name === 'User' ? 'px-3 py-2 shadow-lg max-w-[80%] break-words rounded-2xl bg-[#1e2942] bg-opacity-50' : ''}`}>
+                      {msg.message}
+                    </div>
+                  </div>
                 ) : null))}
               {loading && (
                 <div className="flex justify-start">
