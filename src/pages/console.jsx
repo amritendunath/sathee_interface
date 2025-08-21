@@ -580,7 +580,7 @@ const ChatUI = () => {
         </div>
 
         {/* Input Area */}
-        <div className="sticky bottom-0 left-0 right-0 bg-gradient-to-t from-[#0f1117] via-[#0f1117]/90 to-transparent">
+        <div className=" bottom-0 left-0 right-0 bg-gradient-to-t from-[#0f1117] via-[#0f1117]/90 to-transparent">
           {/* <div className="p-6 max-w-2xl mx-auto"> */}
           <div className="p-3 sm:p-4 md:p-6 max-w-full sm:max-w-xl md:max-w-2xl mx-auto">
             <div className="bg-[#0B0E17] rounded-[32px] p-[18px] mb-[10px] shadow-[0_3px_20px_0_rgba(40,50,70,0.95)] border border-[#181B24]">
