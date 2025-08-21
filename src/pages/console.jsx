@@ -569,21 +569,14 @@ const ChatUI = () => {
             {/* <div className="flex-1 overflow-auto scrollbar">
           <div className=" mt-10 sm:mt-12 md:mt-15 mb-[120px] sm:mb-[140px] md:mb-[150px]  p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-sm sm:text-sm md:text-[14px]"> */}
             <div className="message-wrapper">
-
-
               {messages.map((msg, index) => (
                 (typeof msg.message === 'string') ? (
-                  // <MessageBubble
-                  //   message={{
-                  //     role: msg.name === 'User' ? 'user' : 'assistant',
-                  //     content: msg.message
-                  //   }}
-                  // />
-                  <div key={index} className={`flex ${msg.name === 'User' ? 'justify-end' : 'justify-start'}`}>
-                    <div className={`mt-2 mb-2  ${msg.name === 'User' ? 'px-3 py-2 shadow-lg max-w-[80%] break-words rounded-2xl bg-[#1e2942] bg-opacity-50' : ''}`}>
-                      {msg.message}
-                    </div>
-                  </div>
+                  <MessageBubble
+                    message={{
+                      role: msg.name === 'User' ? 'user' : 'assistant',
+                      content: msg.message
+                    }}
+                  />
                 ) : null))}
               {loading && (
                 <div className="flex justify-start">
