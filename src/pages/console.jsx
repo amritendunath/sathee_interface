@@ -434,17 +434,30 @@ const ChatUI = () => {
           //     ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
           //   `}
           // >
-          <div
-            className={`sticky flex items-center justify-center h-[calc(100vh-80px)] w-full px-4 transition-opacity duration-500 ease-in-out
+      //     <div
+      //       className={`sticky flex items-center justify-center h-[calc(100vh-80px)] w-full px-4 transition-opacity duration-500 ease-in-out
+      // ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      //     >
+      //       <div className="text-center max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
+      //         <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-4xl leading-tight mb-2">
+      //           {getGreetingUI()}, {userName.split(" ")[0]}
+      //         </h1>
+      //         <h2 className="text-white font-semibold text-lg sm:text-xl md:text-2xl leading-tight mb-6">
+      //           What can I help you with today?
+      //         </h2>
+        <div
+    className={`absolute inset-0 top-[60px] flex items-center justify-center px-4 transition-opacity duration-500 ease-in-out
       ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-          >
-            <div className="text-center max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
-              <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-4xl leading-tight mb-2">
-                {getGreetingUI()}, {userName.split(" ")[0]}
-              </h1>
-              <h2 className="text-white font-semibold text-lg sm:text-xl md:text-2xl leading-tight mb-6">
-                What can I help you with today?
-              </h2>
+    style={{ height: "calc(100vh - 60px)" }} // subtract navbar height
+  >
+    <div className="text-center max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
+      <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-4xl leading-tight mb-2">
+        {getGreetingUI()}, {userName.split(" ")[0]}
+      </h1>
+      <h2 className="text-white font-semibold text-lg sm:text-xl md:text-2xl leading-tight mb-6">
+        What can I help you with today?
+      </h2>
+
               {/* <div className="flex-1 flex items-center justify-center p-8">
                 <div className="max-w-3xl text-center">
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 max-w-2xl mx-auto"> */}
