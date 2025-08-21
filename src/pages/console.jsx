@@ -389,52 +389,52 @@ const ChatUI = () => {
       {/* Main content */}
       <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full">
         {/* Navbar */}
-        {/* <div className="fixed top-0 left-0 right-0 z-40">
-
+        {/* <div className=" z-40">
         </div> */}
-                  <div className=" flex items-center z-10">
-            {isMobile && (
-              <>
-                {isOpen ? (
-                  null
-                ) : (
+        <div className="fixed top-0 left-0 right-0 flex items-center z-10">
+          {isMobile && (
+            <>
+              {isOpen ? (
+                null
+              ) : (
 
-                  <button
-                    className="text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none button-hover hover:text-cyan-400"
-                    onClick={() => setIsOpen(prev => !prev)}
-                  >
-                    <PanelLeftOpen size={22} />
-                  </button>
-                )}
-              </>
-            )}
-            {!isMobile && (
-              <>
-                {isOpen ? (
-                  <button
-                    className="translate-x-64 text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none "
-                    onClick={() => setIsOpen(prev => !prev)}
-                  >
-                    <PanelRightOpen size={22} />
-                  </button>
-                ) : (
+                <button
+                  className="text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none button-hover hover:text-cyan-400"
+                  onClick={() => setIsOpen(prev => !prev)}
+                >
+                  <PanelLeftOpen size={22} />
+                </button>
+              )}
+            </>
+          )}
+          {!isMobile && (
+            <>
+              {isOpen ? (
+                <button
+                  className="translate-x-64 text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none "
+                  onClick={() => setIsOpen(prev => !prev)}
+                >
+                  <PanelRightOpen size={22} />
+                </button>
+              ) : (
 
-                  <button
-                    className="text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none button-hover hover:text-cyan-400"
-                    onClick={() => setIsOpen(prev => !prev)}
-                  >
-                    <PanelLeftOpen size={22}/>
-                  </button>
-                )}
-              </>
-            )}
-          </div>
+                <button
+                  className="text-gray-200 top-0 left-0 m-1 ml-2 p-3 z-40 focus:outline-none button-hover hover:text-cyan-400"
+                  onClick={() => setIsOpen(prev => !prev)}
+                >
+                  <PanelLeftOpen size={22} />
+                </button>
+              )}
+            </>
+          )}
           <button
             onClick={handleLogout}
             // className="ml-auto p-3 rounded-full transition-colors button-hover hover:text-red-200">
             className="absolute top-0 right-0 m-1 mr-2 p-3 rounded-full transition-colors button-hover hover:text-red-200">
             <LogOut size={20} />
           </button>
+        </div>
+
         {/* Welcome screen overlay */}
         {welcomeMounted && (messages.length === 0 || input === 300) && input.length <= 300 && (
           // <div
@@ -564,7 +564,7 @@ const ChatUI = () => {
         {/* sm:mt-8 md:mt-10 mb-[120px] sm:mb-[140px] md:mb-[150px] */}
         <div className="flex-1 overflow-y-auto pt-[10px] pb-[calc(96px+env(safe-area-inset-bottom))] scrollbar">
           <div className="sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px] pb-32">
-        {/* <div className="flex-1 overflow-auto scrollbar">
+            {/* <div className="flex-1 overflow-auto scrollbar">
           <div className=" mt-10 sm:mt-12 md:mt-15 mb-[120px] sm:mb-[140px] md:mb-[150px]  p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-sm sm:text-sm md:text-[14px]"> */}
             {messages.map((msg, index) => (
               (typeof msg.message === 'string') ? (
