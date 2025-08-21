@@ -387,6 +387,7 @@ const ChatUI = () => {
 
       {/* Main content */}
       <div className="flex-1 flex flex-col bg-[#0f1117] text-white w-full">
+        {/* Navbar */}
         <div className="fixed top-0 left-0 right-0 z-40">
           <div className=" flex items-center z-10">
             {isMobile && (
@@ -432,23 +433,36 @@ const ChatUI = () => {
             <LogOut size={20} />
           </button>
         </div>
+        {/* Welcome screen overlay */}
         {welcomeMounted && (messages.length === 0 || input === 300) && input.length <= 300 && (
           // <div
           //   className={`text-center w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto justify-center mt-24 sm:mt-40 md:mt-[40px] lg:mt-[80px] transition-opacity duration-500 ease-in-out
           //     ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
           //   `}
           // >
+      //     <div
+      //       className={`sticky flex items-center justify-center h-[calc(100vh-80px)] w-full px-4 transition-opacity duration-500 ease-in-out
+      // ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      //     >
+      //       <div className="text-center max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
+      //         <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-4xl leading-tight mb-2">
+      //           {getGreetingUI()}, {userName.split(" ")[0]}
+      //         </h1>
+      //         <h2 className="text-white font-semibold text-lg sm:text-xl md:text-2xl leading-tight mb-6">
+      //           What can I help you with today?
+      //         </h2>
           <div
-            className={`sticky flex items-center justify-center h-[calc(100vh-80px)] w-full px-4 transition-opacity duration-500 ease-in-out
-      ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-          >
-            <div className="text-center max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
-              <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-4xl leading-tight mb-2">
-                {getGreetingUI()}, {userName.split(" ")[0]}
-              </h1>
-              <h2 className="text-white font-semibold text-lg sm:text-xl md:text-2xl leading-tight mb-6">
-                What can I help you with today?
-              </h2>
+      className={`absolute inset-0 top-[60px] flex items-center justify-center px-4 transition-opacity duration-500 ease-in-out z-20
+        ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      style={{ height: "calc(100vh - 60px)" }}
+    >
+      <div className="text-center max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
+        <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-4xl mb-2">
+          {getGreetingUI()}, {userName.split(" ")[0]}
+        </h1>
+        <h2 className="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-6">
+          What can I help you with today?
+        </h2>
               {/* <div className="flex-1 flex items-center justify-center p-8">
                 <div className="max-w-3xl text-center">
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 max-w-2xl mx-auto"> */}
@@ -557,7 +571,7 @@ const ChatUI = () => {
         )}
         {/* Messages Area */}
         {/* sm:mt-8 md:mt-10 mb-[120px] sm:mb-[140px] md:mb-[150px] */}
-        <div className="">
+        <div className="flex-1 overflow-auto">
           <div className="scrollbar mt-10 mb-[80px] sm:mb-[150px] sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px] pb-32">
         {/* <div className="flex-1 overflow-auto scrollbar">
           <div className=" mt-10 sm:mt-12 md:mt-15 mb-[120px] sm:mb-[140px] md:mb-[150px]  p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-sm sm:text-sm md:text-[14px]"> */}
