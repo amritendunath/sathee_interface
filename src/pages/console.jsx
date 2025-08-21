@@ -358,9 +358,6 @@ const ChatUI = () => {
         <div className="absolute bottom-[-250px] left-[-150px] w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-indigo-500/10 via-blue-400/5 to-sky-400/3 blur-[140px] animate-glow delay-4000" />
       </div>
 
-
-
-
       {/* Sidebar Overlay for Mobile */}
       {isMobile && isOpen && (
         <div
@@ -375,12 +372,9 @@ const ChatUI = () => {
         // w-64 bg-muted flex flex-col transition-all duration-300
         // ${isMobile ? `fixed z-30 h-full ${isOpen ? 'translate-x-0' : '-translate-x-full'}` : 'relative'}
         // `}
-        className={`
-      w-64 h-full bg-muted flex flex-col transition-transform duration-300
-      fixed z-30 
-      ${isOpen ? 'translate-x-0' : '-translate-x-full'}
-
-    `}
+        className={`w-64 h-full bg-muted flex flex-col transition-transform duration-300 fixed z-30 
+          ${isOpen ? 'translate-x-0' : '-translate-x-full'}`
+        }
       >
         <AppSidebar
           onSelectChatSession={handleSelectChatSession}
@@ -584,7 +578,7 @@ const ChatUI = () => {
         {/* <div className="flex-1 overflow-y-auto scrollbar">
           <div className="mt-10 mb-[80px] sm:mb-[150px] sm:p-4 sm:space-y-2 md:space-y-4 max-w-4xl mx-auto text-gray-200 text-[14px]"> */}
         <div className="flex-1 overflow-y-auto ">
-          <div className="scrollbar mt-6 sm:mt-8 md:mt-10 mb-[120px] sm:mb-[140px] md:mb-[150px] p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-xs sm:text-sm md:text-[14px]">
+          <div className="mt-6 sm:mt-8 md:mt-10 mb-[120px] sm:mb-[140px] md:mb-[150px] p-2 sm:p-4 md:space-y-4 max-w-full sm:max-w-3xl md:max-w-4xl mx-auto text-gray-200 text-xs sm:text-sm md:text-[14px]">
             {messages.map((msg, index) => (
               (typeof msg.message === 'string') ? (
                 <MessageBubble
