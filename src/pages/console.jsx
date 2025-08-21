@@ -435,7 +435,7 @@ const ChatUI = () => {
             //   `}
             // >
             <div
-              className={`text-center w-full max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto justify-center mt-24 sm:mt-35 md:mt-[70px] lg:mt-[100px] px-2 transition-opacity duration-500 ease-in-out
+              className={`text-center w-full max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto justify-center mt-24 sm:mt-45 md:mt-[70px] lg:mt-[100px] px-2 transition-opacity duration-500 ease-in-out
                           ${showWelcome ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
             `}
             >
