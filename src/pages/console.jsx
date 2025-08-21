@@ -346,7 +346,7 @@ const ChatUI = () => {
   }
   return (
 
-    <div className="h-screen w-full flex bg-[#0f1117]" >
+    <div className="h-screen w-full flex bg-[#0f1117] overflow-auto" >
       <div className="pointer-events-none fixed inset-0" aria-hidden>
         {/* Top center animated glow */}
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gradient-to-br from-sky-400/10 via-blue-500/10 to-indigo-400/5 blur-[140px] animate-glow" />
