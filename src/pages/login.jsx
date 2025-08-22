@@ -5,11 +5,10 @@ import { useNavigate } from 'react-router-dom'  // Add this import at the top
 // import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "../components/ui/card"
 // import { Label } from "../components/ui/label"
 // import {Mail, GalleryVerticalEnd} from "lucide-react"
-import { Phone } from "lucide-react"
+import { Phone, Loader } from "lucide-react"
 import geneticSvg from '../genetic-data-svgrepo-com.svg'
 // import { LoginForm } from '../components/ui/login-form'
 import RightPanelContent from '../components/ui/rightpanel'
-import {Loader} from 'lucide-react'
 import "../components/styles/App.css";
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -490,7 +489,10 @@ const Login = () => {
               onClick={handleEmail}
               disabled={loading}
             >
-              {loading ? <Loader size={16} color="#fff" className="loader"/> : 'Continue'}
+              <div className="flex items-center justify-center">
+
+              {loading ? <Loader size={24} color="#fff" className="loader"/> : 'Continue'}
+              </div>
             </button>
             <div className="flex items-center mb-6"> {/* Added container classes */}
               <hr className="flex-grow border-gray-700" /> {/* Added hr classes */}
