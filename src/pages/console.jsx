@@ -562,6 +562,7 @@ const ChatUI = () => {
             </div>
           </div>
         )}
+        
         {/* Messages Area */}
         <div className="flex-1">
           <div className="h-screen flex flex-col">
