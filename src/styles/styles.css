@@ -35,9 +35,7 @@ body {
   padding: 20px;
 }
 
-.message-wrapper {
-    padding-bottom: 200px; /* Adjust this value as needed to ensure the first message is visible */
-}
+
 
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {

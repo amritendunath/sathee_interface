@@ -3,8 +3,7 @@ import { useState, useEffect } from "react"
 import "../styles/styles.css"
 import "../components/styles/App.css";
 import axios from 'axios';
-import { SquarePen, MessageCircle, CalendarCheck2 } from "lucide-react"
-
+import { SquarePen, MessageCircle, CalendarCheck2, Loader } from "lucide-react"
 
 
 export function AppSidebar({ onSelectChatSession, onNewSessionClick, onCurrentSessionId }) {
@@ -15,6 +14,7 @@ export function AppSidebar({ onSelectChatSession, onNewSessionClick, onCurrentSe
   const [userId, setUserId] = useState('')
   const [userImage, setUserImage] = useState('')
   const token = localStorage.getItem('token');
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     fetchChatSessions();
@@ -93,6 +93,7 @@ export function AppSidebar({ onSelectChatSession, onNewSessionClick, onCurrentSe
   }
 
   const newSession = async () => {
+    setLoading(true)
     try {
       const createSession = await axios.post(`${process.env.REACT_APP_POINT_AGENT}/api/v1/generate-stream/new-session`, {}, {
         headers: {
@@ -106,6 +107,7 @@ export function AppSidebar({ onSelectChatSession, onNewSessionClick, onCurrentSe
     } catch (error) {
       console.error(error)
     }
+    setLoading(false)
   }
 
   return (
@@ -132,8 +134,11 @@ export function AppSidebar({ onSelectChatSession, onNewSessionClick, onCurrentSe
           type="button"
           className="text-[13px] text-white mb-1 text-left truncate w-full rounded-lg px-2 hover:bg-[#1e2942] py-[6px]"
         >
-          <div className="flex items-center">
-            <SquarePen size={15} className="mr-[6px] mt-[1px]" /> New Chat
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <SquarePen size={15} className="mr-[6px] mt-[1px]" /> New Chat
+            </div>
+            {loading ? <Loader size={16} color="#fff" className="loader" /> : ''}
           </div>
         </button>
       </div>

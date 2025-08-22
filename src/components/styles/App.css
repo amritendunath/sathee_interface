@@ -9,6 +9,17 @@
   margin-left: 2px;
   vertical-align: middle;
 } */
+
+.loader {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .background_color{
   background: linear-gradient(to bottom right, #121212, #1f1f1f, #292929);
 }

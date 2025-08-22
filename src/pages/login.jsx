@@ -9,8 +9,8 @@ import { Phone } from "lucide-react"
 import geneticSvg from '../genetic-data-svgrepo-com.svg'
 // import { LoginForm } from '../components/ui/login-form'
 import RightPanelContent from '../components/ui/rightpanel'
-import { ClipLoader } from 'react-spinners';
-
+import {Loader} from 'lucide-react'
+import "../components/styles/App.css";
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -490,7 +490,7 @@ const Login = () => {
               onClick={handleEmail}
               disabled={loading}
             >
-              {loading ? <ClipLoader size={16} color="#fff" /> : 'Continue'}
+              {loading ? <Loader size={16} color="#fff" className="loader"/> : 'Continue'}
             </button>
             <div className="flex items-center mb-6"> {/* Added container classes */}
               <hr className="flex-grow border-gray-700" /> {/* Added hr classes */}
