@@ -23,6 +23,28 @@ body {
     /* max-height: 80%; */
     padding-bottom: 100px;
 }
+.container {
+  min-height: 100vh; /* At least fill the screen */
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 1; /* Allow content to take up available space */
+  overflow-y: auto; /* Enable scrolling if content is too long */
+  padding: 20px;
+}
+
+.message-wrapper {
+    padding-bottom: 200px; /* Adjust this value as needed to ensure the first message is visible */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .content {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+}
 /* CHATBOX
 =============== */
 .chatbox {
