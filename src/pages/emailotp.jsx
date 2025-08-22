@@ -38,7 +38,7 @@ const EmailVerification = () => {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        credentials: 'include',
+        // credentials: 'include',
         body: JSON.stringify({
           email,
           verificationCode,
