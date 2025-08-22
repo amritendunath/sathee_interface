@@ -154,7 +154,7 @@ export function AppSidebar({ onSelectChatSession, onNewSessionClick, onCurrentSe
         null
       )}
       <div className="flex-1 min-h-0 overflow-y-auto scrollbar-side ">
-        <div className="flex flex-col text-xs overflow-y-auto "
+        <div className="flex flex-col text-sm overflow-y-auto "
         >
           {chatSessions && chatSessions.length > 0 ? (
             chatSessions.map((session) => (
