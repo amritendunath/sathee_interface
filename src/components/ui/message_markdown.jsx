@@ -14,7 +14,7 @@ export default function MessageBubble({ message, isLast }) {
         isUser ? "" : ""
       }`}
     >
-      <div className={`max-w-4xl mx-auto px-6`}>
+      <div className={`max-w-full mx-auto px-6`}>
         {isUser ? (
            <div className="flex justify-end">
 
