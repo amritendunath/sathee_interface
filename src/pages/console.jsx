@@ -10,8 +10,7 @@ import { CustomQuickResponseDropdown } from "../components/ui/modebutton";
 import MessageBubble from "../components/ui/message_markdown";
 import {
   Lightbulb, GraduationCap, PanelLeftOpen, PanelRightOpen, NotepadText,
-  PencilLine, HeartHandshake, LogOut,
-  Loader2
+  PencilLine, HeartHandshake, LogOut, Loader
 } from 'lucide-react';
 import AssistantService from "../AssistantService";
 import SendButton from '../components/ui/send_button'
@@ -435,7 +434,7 @@ const ChatUI = () => {
             onClick={handleLogout}
             // className="ml-auto p-3 rounded-full transition-colors button-hover hover:text-red-200">
             className="absolute top-0 right-0 m-1 mr-2 p-3 rounded-full">
-            {loading ? <Loader2 size={20}/> : <LogOut size={20} />}
+            {loading ? <Loader size={20} className="loader"/> : <LogOut size={20} />}
           </button>
         </div>
 
