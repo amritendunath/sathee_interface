@@ -15,7 +15,7 @@ export function AppSidebar({ onSelectChatSession, onNewSessionClick, onCurrentSe
   const [userImage, setUserImage] = useState('')
   const token = localStorage.getItem('token');
   const [loading, setLoading] = useState(false)
-
+  const [selectedSession, setSelectedSession] = useState(null);
   useEffect(() => {
     fetchChatSessions();
     fetchAppointments();
@@ -94,6 +94,7 @@ export function AppSidebar({ onSelectChatSession, onNewSessionClick, onCurrentSe
 
   const newSession = async () => {
     setLoading(true)
+    setSelectedSession(false)
     try {
       const createSession = await axios.post(`${process.env.REACT_APP_POINT_AGENT}/api/v1/generate-stream/new-session`, {}, {
         headers: {
@@ -109,7 +110,10 @@ export function AppSidebar({ onSelectChatSession, onNewSessionClick, onCurrentSe
     }
     setLoading(false)
   }
-
+  const handleSelectChatSession = (sessionId) => {
+    setSelectedSession(sessionId);
+    onSelectChatSession(sessionId);
+  };
   return (
     <aside className="bg-[#141820] flex flex-col justify-between p-2 text-white h-screen" >
       <div >
@@ -160,8 +164,9 @@ export function AppSidebar({ onSelectChatSession, onNewSessionClick, onCurrentSe
             chatSessions.map((session) => (
               <button
                 key={session._id}
-                className="text-white mb-1 text-left truncate w-full rounded-lg px-2 hover:bg-[#1e2942] py-[6px]"
-                onClick={() => onSelectChatSession(session.session_id)}
+                className={`text-white mb-1 text-left truncate w-full rounded-lg px-2 hover:bg-[#1e2942] py-[6px] ${selectedSession === session.session_id ? 'bg-[#1e2942]' : ''}`}
+                // onClick={() => onSelectChatSession(session.session_id)}
+                onClick={() => handleSelectChatSession(session.session_id)}
                 type="button"
               >
                 <div className="flex flex-col">
