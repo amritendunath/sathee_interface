@@ -41,7 +41,6 @@ const Login = () => {
 
 
   const handleOAuthLogin = (provider) => {
-    setLoading(true);
     if (provider === 'google') {
       window.location.href = `${process.env.REACT_APP_POINT_AUTH}/login/${provider}`
     }
