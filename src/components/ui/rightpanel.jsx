@@ -10,22 +10,22 @@ import { FcDocument } from "react-icons/fc";
 import { CiBellOn } from "react-icons/ci";
 const features = [
     {
-        info: "  Summarize clinical histories with context awareness using GenAI. ",
+        info: "  Summarize clinical histories with context awareness",
         icon: <i class="fas fa-shield-alt fa-fw text-cyan-400"></i>,
         badge: <FaCheckCircle className="rounded-full border-2 border-cyan-400" />
     },
     {
-        info: " Retrieve relevant case reports, medical literature and many more.",
+        info: " Retrieve relevant case reports, medical literature",
         icon: <i class="fas fa-file-alt fa-fw text-cyan-400"></i>,
         badge: <FaCheckCircle className="rounded-full border-2 border-cyan-400" />
     },
     {
-        info: " Autonomously recommend steps based on contextual analysis.",
+        info: " Recommends steps based on contextual analysis.",
         icon: <i class="fas fa-cogs fa-fw text-cyan-400"></i>,
         badge: <FaCheckCircle className="rounded-full border-2 border-cyan-400" />
     },
     {
-        info: " Provide rapid, secure decision support — securely fast and safe.",
+        info: " Provide rapid, secure decision support. Fast and safe.",
         icon: <i class="fas fa-comments fa-fw text-cyan-400"></i>,
         badge: <FaCheckCircle className="rounded-full border-2 border-cyan-400" />
     }
@@ -33,24 +33,23 @@ const features = [
 
 const RightPanelContent = () => {
     return (
-        <div className="text-white text-center mx-auto px-8 max-w-xl mt-8">
+        <div className="text-white text-center mx-auto px-4 sm:px-6 lg:px-8 max-w-xl mt-4 sm:mt-6 lg:mt-8 w-full">
             <h2 className="md:text-xl font-semibold p-1 tracking-wide">
-                Sathi, An Autonomous Medical Co-Pilot For Citizens
+                Med44, An Autonomous Medical Co-Pilot
             </h2>
 
             <p className="text-gray-300 mb-6 text-md px-2" >
                 <div
-                    className=" text-cyan-400 bg-[#0a121d] py-2 rounded-2xl border border-[#282D37] shadow-lg font-semibold">
+                    className="text-gray-400 bg-[#0a121d] py-2 px-1 rounded-2xl border border-[#282D37] shadow-lg font-semibold  mb-2 mt-1">
                     Powered by Agentic Retrieval-Augmented Generation (ARAG)
                 </div>
-                to observe clinical context, reason through medical cases, and guide decisions in real time.
 
             </p>
 
 
-            <ul className=" text-md text-gray-300 mb-6 space-y-3 ">
+            <ul className="text-sm sm:text-md text-gray-300 mb-4 sm:mb-6 space-y-2 sm:space-y-3">
                 {features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-1">
+                    <li key={index} className="flex items-center justify-center gap-1 text-xs sm:text-sm lg:text-base">
                         <span>
                             {feature.icon}
                             {feature.info}

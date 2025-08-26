@@ -10,7 +10,7 @@ import geneticSvg from '../genetic-data-svgrepo-com.svg'
 // import { LoginForm } from '../components/ui/login-form'
 import RightPanelContent from '../components/ui/rightpanel'
 import "../components/styles/App.css";
-
+import knot1 from "../knot1.png"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
@@ -440,14 +440,14 @@ const Login = () => {
         {/* Changed w-1/2 to w-full lg:w-1/2 for responsiveness */}
         <div className="bg-[#0a0a0a] flex flex-col justify-center items-center px-10 py-12 w-full lg:w-1/2 text-white"> {/* Updated left column classes */}
           {/* Logo/Brand - Match structure and classes from index.html */}
-          <div className="flex items-center space-x-2 mb-20 md:absolute top-0 left-0 mt-5 ml-5">
+          <div className="flex items-center space-x-2 mb-20 md:absolute top-0 left-0 mt-5">
             <img
-              src={geneticSvg}
-              alt="Sathi Logo"
-              className="w-10 h-10 mr-2 "
+              src={knot1}
+              alt="med44 Logo"
+              className="w-10 h-10"
             />
             <span className="font-semibold text-white text-[20px] leading-none"> {/* Added text classes */}
-              Sathi Inc.
+              Med44
             </span>
           </div>
 
@@ -459,7 +459,7 @@ const Login = () => {
             </h2>
             <input
               // className="w-full mb-6 px-3 py-2 rounded-md bg-[#121212] border border-[#222222] text-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-gray-600" // Added input classes
-              className="text-center bg-[#121212] border border-gray-700 rounded-[32px] mb-2 px-3 py-2  w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] hover:scale-[1.02] button-glow-google" // Added input classes
+              className="text-center bg-[#121212] border border-gray-700 rounded-[32px] mb-2 px-3 py-4  w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] button-glow-google" // Added input classes
               id="email"
               type="email"
               placeholder="Email address | abc@provider.com"
@@ -484,7 +484,7 @@ const Login = () => {
             {/* Login Button */}
             <button
               // className="w-full bg-gray-300 text-black rounded-md py-2 mb-8 text-sm font-medium hover:bg-gray-400 transition" 
-              className="border border-gray-700 rounded-[32px] py-2 mb-8 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] hover:scale-[1.02] button-glow-google"
+              className="border border-gray-700 rounded-[32px] py-4 mb-8 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] button-glow-google"
               type="submit"
               onClick={handleEmail}
               disabled={loading}
@@ -505,7 +505,7 @@ const Login = () => {
 
             <button
               // Added flex, items-center, justify-center, and bg-[#121212]
-              className="flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-2 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] hover:scale-[1.02] button-glow-google" // Updated button classes
+              className="flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-4 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)]  button-glow-google" // Updated button classes
               type="button"
               // onClick={() => handleOAuthLogin('google')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
               onClick={() => handleOAuthLogin('google')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
@@ -537,7 +537,7 @@ const Login = () => {
 
 
             <button
-              className="mt-4 flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-2 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] hover:scale-[1.02] button-glow-google" // Updated button classes
+              className="mt-4 flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-4 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] button-glow-google" // Updated button classes
               type="button"
               // onClick={() => handleOAuthLogin('google')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
               onClick={() => handleOAuthLogin('phone')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
@@ -548,12 +548,11 @@ const Login = () => {
               </span>
 
             </button>
-
+{/* 
             <button
               className="mt-4 flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-2 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] hover:scale-[1.02] button-glow-google" // Updated button classes
               type="button"
-              // onClick={() => handleOAuthLogin('google')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
-              onClick={() => handleOAuthLogin('facebook')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
+              onClick={() => handleOAuthLogin('facebook')}
             >
               <svg className="mr-3 h-5 w-5" viewBox="0 0 45 45">
                 <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
@@ -562,10 +561,10 @@ const Login = () => {
                 {"  "} Login with Facebook
               </span>
 
-            </button>
+            </button> */}
 
             <button
-              className="mt-4 flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-2 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] hover:scale-[1.02] button-glow-google" // Updated button classes
+              className="mt-4 flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-4 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] button-glow-google" // Updated button classes
               type="button"
               // onClick={() => handleOAuthLogin('google')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
               onClick={() => handleOAuthLogin('twitter')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
@@ -582,7 +581,7 @@ const Login = () => {
             </button>
 
             <button
-              className="mt-4 flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-2 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] hover:scale-[1.02] button-glow-google" // Updated button classes
+              className="mt-4 flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-4 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] button-glow-google" // Updated button classes
               type="button"
               // onClick={() => handleOAuthLogin('google')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
               onClick={() => handleOAuthLogin('microsoft')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
