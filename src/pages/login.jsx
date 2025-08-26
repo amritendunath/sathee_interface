@@ -440,7 +440,7 @@ const Login = () => {
         {/* Changed w-1/2 to w-full lg:w-1/2 for responsiveness */}
         <div className="bg-[#0a0a0a] flex flex-col justify-center items-center px-10 py-12 w-full lg:w-1/2 text-white"> {/* Updated left column classes */}
           {/* Logo/Brand - Match structure and classes from index.html */}
-          <div className="flex items-center space-x-2 mb-20 md:absolute top-0 left-0 mt-5">
+          <div className="flex items-center space-x-2 mb-20 md:absolute top-0 left-0 mt-5 ml-2">
             <img
               src={knot1}
               alt="med44 Logo"
