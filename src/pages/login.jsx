@@ -23,10 +23,6 @@ const Login = () => {
   const navigate = useNavigate()  // Add this hook
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false);
-  const [loadingGoogle, setLoadingGoogle] = useState(false);
-  const [loadingPhone, setLoadingPhone] = useState(false);
-  const [loadingX, setLoadingX] = useState(false);
-  const [loadingMicrosoft, setLoadingMicrosoft] = useState(false);
   const [error, setError] = useState('')
   const [emailPlaceholder, setEmailPlaceholder] = useState("");
 
@@ -44,34 +40,21 @@ const Login = () => {
   }, []);
 
 
-  const handleOAuthLoginGoogle = (provider) => {
-    setLoadingGoogle(true);
+  const handleOAuthLogin = (provider) => {
+    setLoading(true);
     if (provider === 'google') {
-      window.location.href = `${process.env.REACT_APP_POINT_AUTH}/login/${provider}`;
+      window.location.href = `${process.env.REACT_APP_POINT_AUTH}/login/${provider}`
     }
-    else{
-      setLoadingGoogle(false)
+    else if (provider === 'twitter') {
+      window.location.href = `${process.env.REACT_APP_POINT_AUTH}/login/${provider}`
     }
-  };
-  const handleOAuthLoginPhone = (provider) => {
-    setLoadingPhone(true);
-    if (provider === 'phone') {
-      // window.location.href = `${process.env.REACT_APP_POINT_AUTH}/login/${provider}`;
-      // navigate('/phone')
+    else if (provider === 'microsoft') {
+      window.location.href = `${process.env.REACT_APP_POINT_AUTH}/login/${provider}`
     }
-  };
-  const handleOAuthLoginX = (provider) => {
-    setLoadingX(true);
-    if (provider === 'twitter') {
-      window.location.href = `${process.env.REACT_APP_POINT_AUTH}/login/${provider}`;
+    else if (provider === 'phone') {
+      navigate('/phone') 
     }
-  };
-  const handleOAuthLoginMicrosoft = (provider) => {
-    setLoadingMicrosoft(true);
-    if (provider === 'microsoft') {
-      window.location.href = `${process.env.REACT_APP_POINT_AUTH}/login/${provider}`;
-    }
-  };
+  }
 
   const statusEmail = async () => {
     const response = await fetch(`${process.env.REACT_APP_POINT_AUTH}/login/email_status`, {
@@ -228,7 +211,7 @@ const Login = () => {
             >
               <div className="flex items-center justify-center">
 
-                {loading ? <Loader size={24} color="#fff" className="loader" /> : 'Continue'}
+              {loading ? <Loader size={24} color="#fff" className="loader"/> : 'Continue'}
               </div>
             </button>
             <div className="flex items-center mb-6"> {/* Added container classes */}
@@ -243,7 +226,7 @@ const Login = () => {
             <button
               className="flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-4 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)]  button-glow-google" // Updated button classes
               type="button"
-              onClick={() => handleOAuthLoginGoogle('google')}
+              onClick={() => handleOAuthLogin('google')}
             >
               {/* Use SVG icon instead of Font Awesome */}
               <svg className="mr-4 h-5 w-5" viewBox="0 0 24 24">
@@ -264,9 +247,8 @@ const Login = () => {
                   fill="#EA4335"
                 />
               </svg>
-              <span className="font-semibold flex items-center gap-2">
+              <span className="font-semibold">
                 {" "}Login with Google
-                {loadingGoogle ? <Loader className="loader" /> : ""}
               </span>
 
             </button>
@@ -276,16 +258,15 @@ const Login = () => {
               className="mt-4 flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-4 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] button-glow-google" // Updated button classes
               type="button"
               // onClick={() => handleOAuthLogin('google')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
-              onClick={() => handleOAuthLoginPhone('phone')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
+              onClick={() => handleOAuthLogin('phone')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
             >
               <Phone className="mr-6 h-5 w-5" />
-              <span className="font-semibold flex items-center gap-2">
+              <span className="font-semibold">
                 {"  "} Login with Phone
-                {loadingPhone ? <Loader className="loader" /> : ""}
               </span>
 
             </button>
-            {/* 
+{/* 
             <button
               className="mt-4 flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-2 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] hover:scale-[1.02] button-glow-google" // Updated button classes
               type="button"
@@ -304,16 +285,15 @@ const Login = () => {
               className="mt-4 flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-4 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] button-glow-google" // Updated button classes
               type="button"
               // onClick={() => handleOAuthLogin('google')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
-              onClick={() => handleOAuthLoginX('twitter')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
+              onClick={() => handleOAuthLogin('twitter')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
             >
               <svg className="mr-4 h-5 w-5" viewBox="0 0 40 40">
                 <path fill="#03A9F4"
                   d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path>
               </svg>
               {/* <FontAwesomeIcon className="mr-4 h-5 w-5" icon={} /> */}
-              <span className="font-semibold flex items-center gap-2">
+              <span className="font-semibold">
                 {"  "} Login with Twitter / X
-                {loadingX ? <Loader className="loader" /> : ""}
               </span>
 
             </button>
@@ -322,14 +302,13 @@ const Login = () => {
               className="mt-4 flex items-center justify-center bg-[#121212] border border-gray-700 rounded-[32px] py-4 w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(66,133,244,0.5)] button-glow-google" // Updated button classes
               type="button"
               // onClick={() => handleOAuthLogin('google')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
-              onClick={() => handleOAuthLoginMicrosoft('microsoft')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
+              onClick={() => handleOAuthLogin('microsoft')} // Add click handler (assuming handleOAuthLogin exists and handles 'google')
             >
               <svg className="mr-4 h-5 w-5" viewBox="0 0 48 48">
                 <path fill="#ff5722" d="M6 6H22V22H6z" transform="rotate(-180 14 14)"></path><path fill="#4caf50" d="M26 6H42V22H26z" transform="rotate(-180 34 14)"></path><path fill="#ffc107" d="M26 26H42V42H26z" transform="rotate(-180 34 34)"></path><path fill="#03a9f4" d="M6 26H22V42H6z" transform="rotate(-180 14 34)"></path>
               </svg>
-              <span className="font-semibold flex items-center gap-2">
+              <span className="font-semibold">
                 {"  "} Login with Microsoft
-                {loadingMicrosoft ? <Loader className="loader" /> : ""}
               </span>
 
             </button>
